@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class AppClienteBanco {
 
     public static void main(String[] args) throws RemoteException, NotBoundException, MalformedURLException {
-        Registry registry = LocateRegistry.getRegistry();
+        Registry registry = LocateRegistry.getRegistry(args[0]);
         BancoServiceIF banco = (BancoServiceIF) registry.lookup("BancoService");
 
         menu();
